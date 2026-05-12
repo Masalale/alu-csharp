@@ -2,10 +2,10 @@
 
 class Program
 {
-    static void Main(string[] args)
-    {
-        string str1 = "Welcome to ";
-        string str2 = "Holberton School!";
-        Console.WriteLine(str1 + str2);
-    }
+	static void Main(string[] args)
+	{
+		string str1 = "Holberton";
+		string str2 = "School";
+		Console.WriteLine("Welcome to {0} {1}!", str1, str2);
+	}
 }

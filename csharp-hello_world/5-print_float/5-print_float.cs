@@ -2,9 +2,9 @@
 
 class Program
 {
-    static void Main(string[] args)
-    {
-        double number = 3.14159;
-        Console.WriteLine("Float: " + number.ToString("0.00"));
-    }
+	static void Main(string[] args)
+        {
+		float number = 3.14159f;
+		Console.WriteLine("Float: " + number.ToString("0.00"));
+        }
 }
