@@ -8,6 +8,5 @@ class Program
         {
             Console.Write(c);
         }
-        Console.WriteLine();
     }
 }

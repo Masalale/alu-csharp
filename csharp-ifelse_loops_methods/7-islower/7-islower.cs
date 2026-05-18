@@ -6,10 +6,4 @@ class Character
     {
         return c >= 'a' && c <= 'z';
     }
-
-    static void Main(string[] args)
-    {
-        Console.WriteLine(Character.IsLower('a'));
-        Console.WriteLine(Character.IsLower('Z'));
-    }
 }
