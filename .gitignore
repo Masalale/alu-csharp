@@ -4,3 +4,6 @@ obj/
 
 # VS Code settings
 .vscode/
+
+# JetBrains Rider settings
+.idea/
