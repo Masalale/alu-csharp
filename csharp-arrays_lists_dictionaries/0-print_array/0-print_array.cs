@@ -2,7 +2,7 @@ using System;
 
 class Array
 {
-    public static int?[] CreatePrint(int size)
+    public static int[] CreatePrint(int size)
     {
         if (size < 0)
         {
@@ -10,7 +10,7 @@ class Array
             return null;
         }
 
-        int?[] arr = new int?[size];
+        int[] arr = new int[size];
 
         for (int i = 0; i < size; i++)
         {
