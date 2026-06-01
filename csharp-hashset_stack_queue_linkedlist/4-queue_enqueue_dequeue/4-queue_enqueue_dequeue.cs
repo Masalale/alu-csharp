@@ -14,7 +14,9 @@ class MyQueue
             return aQueue;
         }
 
-        Console.WriteLine("First item: " + aQueue.Peek());
+        string first = aQueue.Dequeue();
+
+        Console.WriteLine("First item: " + first);
 
         aQueue.Enqueue(newItem);
 
@@ -37,6 +39,10 @@ class MyQueue
             aQueue.Clear();
             for (int i = idx + 1; i < arr.Length; i++)
                 aQueue.Enqueue(arr[i]);
+        }
+        else
+        {
+            aQueue.Enqueue(first);
         }
 
         return aQueue;
