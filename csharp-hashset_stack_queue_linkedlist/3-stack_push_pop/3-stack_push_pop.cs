@@ -14,7 +14,9 @@ class MyStack
             return aStack;
         }
 
-        Console.WriteLine("Top item: " + aStack.Peek());
+        string top = aStack.Pop();
+
+        Console.WriteLine("Top item: " + top);
 
         bool contains = aStack.Contains(search);
         Console.WriteLine("Stack contains \"" + search + "\": " + contains);
@@ -35,6 +37,10 @@ class MyStack
             aStack.Clear();
             for (int i = arr.Length - 1; i > idx; i--)
                 aStack.Push(arr[i]);
+        }
+        else
+        {
+            aStack.Push(top);
         }
 
         aStack.Push(newItem);
