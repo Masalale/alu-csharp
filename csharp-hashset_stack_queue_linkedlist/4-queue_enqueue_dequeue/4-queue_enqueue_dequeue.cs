@@ -11,12 +11,11 @@ class MyQueue
         {
             Console.WriteLine("Queue is empty");
             aQueue.Enqueue(newItem);
+            Console.WriteLine("Queue contains \"" + search + "\": " + aQueue.Contains(search));
             return aQueue;
         }
 
-        string first = aQueue.Dequeue();
-
-        Console.WriteLine("First item: " + first);
+        Console.WriteLine("First item: " + aQueue.Peek());
 
         aQueue.Enqueue(newItem);
 
@@ -25,6 +24,7 @@ class MyQueue
 
         if (contains)
         {
+            aQueue.Dequeue();
             string[] arr = aQueue.ToArray();
             int idx = -1;
             for (int i = 0; i < arr.Length; i++)
@@ -39,10 +39,6 @@ class MyQueue
             aQueue.Clear();
             for (int i = idx + 1; i < arr.Length; i++)
                 aQueue.Enqueue(arr[i]);
-        }
-        else
-        {
-            aQueue.Enqueue(first);
         }
 
         return aQueue;
