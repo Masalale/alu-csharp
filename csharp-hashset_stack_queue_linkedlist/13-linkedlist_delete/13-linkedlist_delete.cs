@@ -5,6 +5,9 @@ class LList
 {
     public static void Delete(LinkedList<int> myLList, int index)
     {
+        if (index < 0)
+            return;
+
         LinkedListNode<int> current = myLList.First;
         for (int i = 0; i < index && current != null; i++)
             current = current.Next;
