@@ -8,6 +8,8 @@ This repository contains C# projects for ALU's AR/VR Development curriculum.
 - [csharp-arrays_lists_dictionaries](./csharp-arrays_lists_dictionaries/) - arrays, lists, dictionaries
 - [csharp-hashset_stack_queue_linkedlist](./csharp-hashset_stack_queue_linkedlist/) - hashsets, stacks, queues, linked lists
 - [csharp-structs_enums](./csharp-structs_enums/) - structs, enumerations
+- [csharp-exceptions](./csharp-exceptions/) - exceptions and error handling
+- [csharp-classes](./csharp-classes/) - classes and namespaces
 
 ## Requirements
 - All C# files compiled using `dotnet`
