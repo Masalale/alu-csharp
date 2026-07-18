@@ -13,8 +13,8 @@ public static class MatrixMath
     /// <param name="direction">Shear axis: 'x' or 'y'.</param>
     /// <param name="factor">The shear factor.</param>
     /// <returns>
-    /// A new 2×2 sheared matrix, or <c>new double[,] { { -1 } }</c>
-    /// if the matrix is not 2×2 or the direction is invalid.
+    /// A new 2×2 sheared matrix with each element rounded to the nearest hundredth,
+    /// or <c>new double[,] { { -1 } }</c> if the matrix is not 2×2 or the direction is invalid.
     /// </returns>
     public static double[,] Shear2D(double[,] matrix, char direction, double factor)
     {
@@ -33,7 +33,7 @@ public static class MatrixMath
         for (int i = 0; i < 2; i++)
             for (int j = 0; j < 2; j++)
                 for (int k = 0; k < 2; k++)
-                    result[i, j] += matrix[i, k] * shearMatrix[k, j];
+                    result[i, j] = Math.Round(result[i, j] + matrix[i, k] * shearMatrix[k, j], 2);
 
         return result;
     }
