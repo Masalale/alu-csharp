@@ -93,7 +93,7 @@ class Queue<T>
         }
         if (CheckType() != typeof(string) && CheckType() != typeof(char))
         {
-            Console.WriteLine("Concatenate() is for a queue of Strings or Chars only.");
+            Console.WriteLine("Concatenate is for a queue of Strings or Chars only.");
             return null;
         }
         string result = head.value.ToString();
