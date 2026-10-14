@@ -2,9 +2,10 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net10.0</TargetFramework>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <DocumentationFile>bin\$(Configuration)\netcoreapp2.1\$(AssemblyName).xml</DocumentationFile>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <NoWarn>NETSDK1138</NoWarn>
+    <RollForward>LatestMajor</RollForward>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
   </PropertyGroup>
 
 </Project>
