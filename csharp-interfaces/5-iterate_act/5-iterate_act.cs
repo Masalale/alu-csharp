@@ -1,52 +1,72 @@
-// RoomObjects class with IterateAction executing interface methods on collections
 using System;
 using System.Collections.Generic;
 
+/// <summary>Abstract base class.</summary>
 public abstract class Base
 {
+    /// <summary>Gets or sets the name.</summary>
     public string name { get; set; }
 
+    /// <summary>Returns formatted string of name and type.</summary>
     public override string ToString()
     {
         return $"{this.name} is a {this.GetType().Name}";
     }
 }
 
+/// <summary>Interactive interface.</summary>
 public interface IInteractive
 {
+    /// <summary>Interacts with the object.</summary>
     void Interact();
 }
 
+/// <summary>Breakable interface.</summary>
 public interface IBreakable
 {
+    /// <summary>Gets or sets the durability.</summary>
     int durability { get; set; }
+
+    /// <summary>Breaks the object.</summary>
     void Break();
 }
 
+/// <summary>Collectable interface.</summary>
 public interface ICollectable
 {
+    /// <summary>Gets or sets whether the object is collected.</summary>
     bool isCollected { get; set; }
+
+    /// <summary>Collects the object.</summary>
     void Collect();
 }
 
+/// <summary>Door class inheriting Base and IInteractive.</summary>
 public class Door : Base, IInteractive
 {
+    /// <summary>Initializes a new instance of the Door class.</summary>
     public Door(string name = "Door")
     {
         this.name = name;
     }
 
+    /// <summary>Interacts with the door.</summary>
     public void Interact()
     {
         Console.WriteLine($"You try to open the {this.name}. It's locked.");
     }
 }
 
+/// <summary>Decoration class inheriting Base, IInteractive, and IBreakable.</summary>
 public class Decoration : Base, IInteractive, IBreakable
 {
+    /// <summary>Indicates whether decoration is a quest item.</summary>
     public bool isQuestItem;
+
+    /// <summary>Gets or sets durability.</summary>
     public int durability { get; set; }
 
+    /// <summary>Initializes a new instance of the Decoration class.</summary>
     public Decoration(string name = "Decoration", int durability = 1, bool isQuestItem = false)
     {
         if (durability <= 0)
@@ -59,6 +79,7 @@ public class Decoration : Base, IInteractive, IBreakable
         this.isQuestItem = isQuestItem;
     }
 
+    /// <summary>Interacts with the decoration.</summary>
     public void Interact()
     {
         if (this.durability <= 0)
@@ -75,6 +96,7 @@ public class Decoration : Base, IInteractive, IBreakable
         }
     }
 
+    /// <summary>Breaks the decoration, decrementing durability.</summary>
     public void Break()
     {
         this.durability--;
@@ -94,16 +116,20 @@ public class Decoration : Base, IInteractive, IBreakable
     }
 }
 
+/// <summary>Key class inheriting Base and ICollectable.</summary>
 public class Key : Base, ICollectable
 {
+    /// <summary>Gets or sets whether the key is collected.</summary>
     public bool isCollected { get; set; }
 
+    /// <summary>Initializes a new instance of the Key class.</summary>
     public Key(string name = "Key", bool isCollected = false)
     {
         this.name = name;
         this.isCollected = isCollected;
     }
 
+    /// <summary>Collects the key.</summary>
     public void Collect()
     {
         if (!this.isCollected)
@@ -118,8 +144,10 @@ public class Key : Base, ICollectable
     }
 }
 
+/// <summary>RoomObjects class providing actions on collections of objects.</summary>
 public class RoomObjects
 {
+    /// <summary>Iterates through room objects and executes corresponding interface methods.</summary>
     public static void IterateAction(List<Base> roomObjects, Type type)
     {
         foreach (Base obj in roomObjects)
